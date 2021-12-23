@@ -1,78 +1,97 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="author" content="{{ site.author }}" />
-    <title>{{ page.title }} | {{ site.author }}</title>
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link href="/feed/" rel="alternate" title="{{ site.author }}" type="application/atom+xml" />
-    <link rel="stylesheet" href="/media/css/style.css">
-    <link rel="stylesheet" href="/media/css/highlight.css">
-    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
-  </head>
-  <script type="text/javascript">
-    function setTimeSpan(){
-    	var date = new Date();
-    	timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
-    }
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>
+        {% if page.title %}
+            {{ page.title }}
+        {% else %}
+            {{ site.title }}
+        {% endif %}         
+    </title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta http-equiv="Cache-Control" content="max-age=1209600">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="{{ site.author.name }}" />
+    <meta name="description" content="{{ page.description }}" />
+    <meta name="keywords" content="{{ page.keywords | join: ',' }}" />
+    <!-- //页面样式 -->
+    <link rel="stylesheet" href="{{ site.url }}{{ site.themes }}/css/style.css" type="text/css"/>
+    <!-- <link rel="stylesheet" href="{{ site.url }}{{ site.themes }}/css/pygments.css" type="text/css" /> -->
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="{{ site.feed }}"  media="print"/>
+    <!-- <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/solarized-dark.min.css" rel="stylesheet" media="print"> -->
+<style>
+.hljs{display:block;overflow-x:auto;padding:0.5em;background:#002b36;color:#839496}.hljs-comment,.hljs-quote{color:#586e75}.hljs-keyword,.hljs-selector-tag,.hljs-addition{color:#859900}.hljs-number,.hljs-string,.hljs-meta .hljs-meta-string,.hljs-literal,.hljs-doctag,.hljs-regexp{color:#2aa198}.hljs-title,.hljs-section,.hljs-name,.hljs-selector-id,.hljs-selector-class{color:#268bd2}.hljs-attribute,.hljs-attr,.hljs-variable,.hljs-template-variable,.hljs-class .hljs-title,.hljs-type{color:#b58900}.hljs-symbol,.hljs-bullet,.hljs-subst,.hljs-meta,.hljs-meta .hljs-keyword,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-link{color:#cb4b16}.hljs-built_in,.hljs-deletion{color:#dc322f}.hljs-formula{background:#073642}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}
+</style>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?67c88d7227099542a0d6ff5d6d374965";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"> </script>
+    <script> hljs.initHighlightingOnLoad(); </script>
     
-    Date.prototype.format = function(format)
-		{
-    var o =
-    	{
-    	    "M+" : this.getMonth()+1, //month
-    	    "d+" : this.getDate(),    //day
-    	    "h+" : this.getHours(),   //hour
-    	    "m+" : this.getMinutes(), //minute
-    	    "s+" : this.getSeconds(), //second
-    	    "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
-    	    "S" : this.getMilliseconds() //millisecond
-    	}
-    	if(/(y+)/.test(format))
-    	format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
-    	for(var k in o)
-    	if(new RegExp("("+ k +")").test(format))
-    	format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
-    	return format;
-		}
-  </script>
-  <body onLoad="setInterval(setTimeSpan,1000);">
-    <div id="container">
-      <div id="main" role="main">
-        <header>
-        <h1>{{ page.title }}</h1>
-        </header>
-        <nav>
-        <span><a title="home page" class="" href="/">Home</a></span>
-        <span><a title="categories" class="" href="/categories/">Categories</a></span>
-        <span><a title="tags" class="" href="/tags/">Tags</a></span>
-        <span><a title="links" class="" href="/game/">Game</a></span>
-        <span><a title="guestbook" class="" href="/logs/">Log</a></span>
-        <span><a title="guestbook" class="" href="/sports/">Sport</a></span>
-        <span><a title="about" class="" href="/about/">About</a></span>
-        <span><a title="subscribe by RSS" class="" href="/feed/">Subscribe</a></span>
-        </nav>
-        <article class="content">
-        {{ content }}
-        </article>
-      </div>
-
-    <footer>
-        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="http://pages.github.com">GitHub</a> | Copyright 2012 - {{site.time | date:"%Y"}} by <a href="/about/">besteric</a> | <span class="label label-info" id="timeSpan"></span></small></p>
-    </footer>
-
+</head>
+<body id="violet">
+    <div class="page-wrapper">
+        <section class="head" id="violet-head">
+            <header class="header" id="violet-header">
+                <h1 class="logo"><a href="{{ site.url }}">{{ site.title }}</a></h1>
+                <h2 class="subtitle">{{ site.subTitle }}</h2>
+            </header>
+            <nav class="nav" id="violet-nav">
+                <ul class="nav-list">
+                    {% for link in site.nav %}
+                    {% assign active = nil %}
+                    {% if page.url == link.url%}
+                      {% assign active = 'nav-item-active' %}
+                    {% endif %}
+                    <li class="nav-item {{ active }}">
+                        <a href="{{ link.url }}">
+                            {{ link.text }}
+                        </a>
+                        {{ indicator }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </section>
+        <section class="main" id="violet-main">
+            {{ content }}
+        </section>
+        <footer class="foot" id="violet-foot">
+            <div class="footer fn-clear">
+                <h1 class="logo">{{ site.title }}</h1>
+            </div>
+            <div class="copyright">
+                <div class="copyright-cnt fn-clear">
+                    {% for link in site.follow %}
+                    <a class="follow" href="{{ link.url }}" target="_blank" rel="noopener"><i class="fa {{ link.class }}"></i></a>
+                    {% endfor %}
+                    <p class="text">Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="https://pages.github.com/">Github</a> | Copyright 2012 - 2014 by <a href="https://www.besteric.com">besteric</a> | Design by <a href="https://www.zhanxin.info">zhanxin.lin</a></p>
+                </div>
+            </div>
+        </footer>
     </div>
-
     <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-12443851-2']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+        var headImgArr = [];
+        {% for imgsrc in site.headimg %}
+            headImgArr.push("{{ imgsrc.item }}");
+        {% endfor %}
+        if(headImgArr.length <= 0) {
+            headImgArr = ["https://gtms02.alicdn.com/tps/i2/T1iyTkFttcXXcryKEg-1280-200.jpg"];
+            var item = 0;
+        } else {
+            var item = Math.floor(Math.random() * (headImgArr.length));
+        }
+        $("#violet-head").css({
+            "background-image": "url(" + headImgArr[item] + ")"
+        });
     </script>
-
-  </body>
+</body>
 </html>

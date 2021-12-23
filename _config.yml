@@ -1,9 +1,51 @@
-markdown: rdiscount
+# markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+rouge: true
+# plugins: ./_plugins
+paginate: 8
 permalink: /:year/:month/:day/:title/
-url: http://besteric.github.com
-author: besteric
-pygments: true
-safe: true
-paginate: 16
-auto: true
+
+safe: false
+
+#站点基础配置
+title: For The Best Thing In The World
+subTitle:  Work Hard to Enjoy Them.
+description: 写东西的Cache
+url: https://atlas-comstock.github.io/
+feed: /atom.xml
+
+#菜单配置
+nav:
+  - text: 首页
+    url: /
+  - text: 每个人的一生 都是一次远行
+    url: /experience/
+  - text: 文章列表
+    url: /archives/
+  - text: 关于我
+    url: /about/
+  - text: 友情链接
+    url: /friend_link/
+  - text: 订阅
+    url: /atom.xml
+
+#theme config
+themes: /themes/violet
+
+#配置你喜欢的顶部背景图片
+headimg:
+  - item: https://gtms02.alicdn.com/tps/i2/T1PObnFqBdXXcryKEg-1280-200.jpg
+  - item: https://gtms03.alicdn.com/tps/i3/T1U_YlFAlcXXbErygJ-2048-260.jpg
+  - item: https://gtms04.alicdn.com/tps/i4/T1K0LLFvVbXXbErygJ-2048-260.jpg
+  - item: https://gtms01.alicdn.com/tps/i1/T12DHKFx4bXXbErygJ-2048-260.jpg
+#关注我
+follow:
+  - class: fa-rss
+    url: https://atlas-comstock.github.io/
+
+#作者信息
+author:
+  name: atlas-comstock
+  img: 
 
