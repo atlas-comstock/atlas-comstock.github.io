@@ -459,7 +459,8 @@ import axios from 'axios';
                             });
                           }
                           if(keyMenu.type === 'a') {
-                            window.open(render(keyMenu.content), '_target')
+                            let res = "iina://weblink?url=" + encodeURIComponent(web_content_link)
+                            window.open(res, '_target')
                           } else if(keyMenu.type === 'copy') {
                             copy(render(keyMenu.content))
                           }
