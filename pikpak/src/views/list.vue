@@ -455,13 +455,13 @@ import axios from 'axios';
                               if(key === 'web_content_link' && res.data.medias && res.data.medias.length > 0) {
                                 data = res.data.medias[0]?.link?.url || data
                               }
-                              return data
+                              console.log("orignianl data is ", data)
+                              console.log("encoded data is ", encodeURIComponent(data))
+                              return encodeURIComponent(data)
                             });
                           }
                           if(keyMenu.type === 'a') {
-                            let res = "iina://weblink?url=" + encodeURIComponent(web_content_link)
-                            console.log("try to open ", res)
-                            window.open(res, '_target')
+                            window.open(render(keyMenu.content), '_target')
                           } else if(keyMenu.type === 'copy') {
                             copy(render(keyMenu.content))
                           }
