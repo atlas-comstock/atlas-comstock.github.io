@@ -460,6 +460,7 @@ import axios from 'axios';
                           }
                           if(keyMenu.type === 'a') {
                             let res = "iina://weblink?url=" + encodeURIComponent(web_content_link)
+                            console.log("try to open ", res)
                             window.open(res, '_target')
                           } else if(keyMenu.type === 'copy') {
                             copy(render(keyMenu.content))
