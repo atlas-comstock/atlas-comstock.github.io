@@ -16,7 +16,7 @@ tags:
   为了修复我在wine中发现的bug--[sprintf在vs和gcc下的行为不一致](https://bugs.winehq.org/show_bug.cgi?id=37913),gcc的printf，sprintf是四舍六入五成双的舍入(银行家舍入)，而vs的则是四舍五入,开始研究起浮点数打印字符串。
   算法的核心就是把小数点后面的每一个数字提取出来,我分别想到2种方法：对于double a
   
-  1. a - (int)a 这样把小数拿出来，乘以精度，得到的数值用round函数后，就是整数，接下来就容易了。可以参考[我的实现](https://github.com/YongHaoWu/algorithm_and_datastruct/blob/master/algorithms/my_sprintf.c),在精度不大的情况下没有问题。
+  1. a - (int)a 这样把小数拿出来，乘以精度，得到的数值用round函数后，就是整数，接下来就容易了。可以参考[我的实现](https://github.com/huoru/algorithm_and_datastruct/blob/master/algorithms/my_sprintf.c),在精度不大的情况下没有问题。
   可是，在乘以精度的时候就会有问题，因为浮点数不可以精确表示。比如2.34以35位精度表示成2.3400000...000,当乘以超过一定精度的时候，你就会发现，小数点后不是单纯的0而是其他数字了。
   
   2. a- (int)a 这样把小数拿出来，用fmod(a, 0.1)取余数，可是问题是，0.789不断除0.1后,

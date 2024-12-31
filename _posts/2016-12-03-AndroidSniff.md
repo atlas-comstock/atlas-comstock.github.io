@@ -166,7 +166,7 @@ lsof + c<num> num为0显示命令所有的名称; 不为0表示按该值截断
 system_server   IPv6 TCP 192.168.1.2 49872 42.62.94.142 80 (CLOSE_WAIT)
 没有 /etc/passwd 文件啦。你 2>/dev/null 就好
 
-lsof -i  > /data/data/com.example.yonghaohu.sniff/files/tempres
+lsof -i  > /data/data/com.example.huoru.sniff/files/tempres
 
 在lsofres文件中，现在还没有时间戳，请添加上每条socket的时间戳，可以是采集到socket记录的系统时间
 

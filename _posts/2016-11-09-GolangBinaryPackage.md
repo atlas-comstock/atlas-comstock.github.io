@@ -14,7 +14,7 @@ go1.7引入了[binary-package](https://tip.golang.org/pkg/go/build/#hdr-Binary_O
 
 ---
 
-生成的步骤比较复杂, 因此我制作了一个可以生成二进制包以及fake.go(相当于C语言的头文件)的[golang-binary-package-generator工具](https://github.com/YongHaoWu/golang-binary-package-generator#golang-binary-package-generator)
+生成的步骤比较复杂, 因此我制作了一个可以生成二进制包以及fake.go(相当于C语言的头文件)的[golang-binary-package-generator工具](https://github.com/huoru/golang-binary-package-generator#golang-binary-package-generator)
 
 
 ### How to use it

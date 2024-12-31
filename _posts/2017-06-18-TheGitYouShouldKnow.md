@@ -31,9 +31,9 @@ tags:
 
 #### 你所不知道的 github 初始化
 
-初始创建一个 github 仓库时，github 会给一些命令你去创建 git本地项目，`git init`就不用说了，`  git remote add origin git@github.com:YongHaoWu/test.git` 你知道这里的 origin 是什么吗？
+初始创建一个 github 仓库时，github 会给一些命令你去创建 git本地项目，`git init`就不用说了，`  git remote add origin git@github.com:huoru/test.git` 你知道这里的 origin 是什么吗？
 
-是的，就仅仅是一个名字，对`git@github.com:YongHaoWu/test.git` 这个 ssh 地址的命名，你可以把 `origin`命名为 `gakki` —— `git remote add gakki git@github.com:YongHaoWu/test.git`, 以后就可以用`git push gakki master`了。
+是的，就仅仅是一个名字，对`git@github.com:huoru/test.git` 这个 ssh 地址的命名，你可以把 `origin`命名为 `gakki` —— `git remote add gakki git@github.com:huoru/test.git`, 以后就可以用`git push gakki master`了。
 
 另外，你还可以`add`好几个名字，比如：你在 github 跟coding 同样都有仓库放代码的情况。
 
@@ -78,19 +78,19 @@ git merge gakki/master feat-add-lister //把 gakki 的 master 分支 merge 到 f
 ##### 合并你的 commits
 
 ```
-Author: YongHao Hu <hyh@vincross.com>
+Author: huoru <hyh@vincross.com>
 Date:   Fri Dec 23 17:55:49 2016 +0800
 
     install skill: Fix skill pkg relative path.
 
 commit 37f37e46a2570c0989a46f39169bba510ebdabd8
-Author: YongHao Hu <hyh@vincross.com>
+Author: huoru <hyh@vincross.com>
 Date:   Fri Dec 23 10:51:09 2016 +0800
 
     mind: Add comments for understanding.
 
 commit 4eb9b9743d2bdc301a0e97f73d652f67adc82b32
-Author: YongHao Hu <hyh@vincross.com>
+Author: huoru <hyh@vincross.com>
 Date:   Thu Dec 22 15:00:02 2016 +0800
 
     skill-third-party: Add default include library.
@@ -172,19 +172,19 @@ pick 84c413a install skill: Fix skill pkg relative path.
 
 ```
  commit 03bb9a14f5ea00d51d2edc14587b37b1ab9ccf5d
-Author: YongHao Hu christopherwuy@gmail.com
+Author: huoru christopherwuy@gmail.com
 Date: Fri Jul 10 17:23:02 2015 +0800
 
 msvcp110: Add tr2_sys__Unlink implementation and test.
 
 commit 24137cd93c783ced61ca152cb4384287e6859ba4
-Author: YongHao Hu christopherwuy@gmail.com
+Author: huoru christopherwuy@gmail.com
 Date: Tue Jul 7 11:04:25 2015 +0800
 
 msvcp110: Add tr2_sys__Symlink implementation and test.
 
 commit 51702048d9ecd1dc3887a63c057761a8547ce5f6
-Author: YongHao Hu christopherwuy@gmail.com
+Author: huoru christopherwuy@gmail.com
 Date: Thu Jul 2 23:23:51 2015 +0800
 
 msvcp110: Add tr2_sys__Link implementation and test.

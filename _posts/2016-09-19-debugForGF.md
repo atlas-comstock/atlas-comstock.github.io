@@ -51,7 +51,7 @@ debug的关键:
 把函数或者一些变量硬编码(写死了它的值而不是赋值进去), 对比一下与原来结果
 
 ```
-db, err := gorm.Open("postgres", "host=localhost user=yonghao dbname=backend sslmode=disable password=") 
+db, err := gorm.Open("postgres", "host=localhost user=huoru dbname=backend sslmode=disable password=") 
 ```
 ，就可以连接数据库. 而 
 
@@ -68,11 +68,11 @@ db, err = gorm.Open("postgres", fmt.Sprintf("host=%s user=%s dbname=%s sslmode=d
 
 成功时打印的信息
 
-> [Warn] 2016/08/20 11:56:08 psql.go:30: success to connect database <nil> details:  host=localhost user=yonghao password= dbname=backend sslmode=disable
+> [Warn] 2016/08/20 11:56:08 psql.go:30: success to connect database <nil> details:  host=localhost user=huoru password= dbname=backend sslmode=disable
 
 失败时打印的：
 > reading config from: /etc/backend/config.json
-[ERROR] 2016/08/20 11:51:19 psql.go:36: Failed to connect database pq: database "yonghao" does not exist details:  host=localhost user=yonghao password= dbname=backend sslmode=disable
+[ERROR] 2016/08/20 11:51:19 psql.go:36: Failed to connect database pq: database "huoru" does not exist details:  host=localhost user=huoru password= dbname=backend sslmode=disable
 
 后来对比一下硬编码与Sprintf的区别，便发现格式不太一样，心想会不会是格式的问题，便把硬编码的密码字段移到最后，最后发现了可以成功。再把硬编码里的密码字段移到前面，发现同样不行。
 于是便确定了是问题是密码字段在中间，因为密码为空，便变成了这样```password=dbname=backend```，psql无法识别特殊字段，而放在最后没有任何东西才真正为空。

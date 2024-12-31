@@ -21,7 +21,7 @@ See  http://goo.gl/Rn8eaW
 Accepted by Google Summer Of Code 2015, project is implementing Filesystem 
 functions from tr2 namespace on Wine.  
 
-我的简历在LinkedIn：https://www.linkedin.com/in/yonghaohu  
+我的简历在LinkedIn：https://www.linkedin.com/in/huoru  
 
 原题:https://leetcode.com/problems/wiggle-sort-ii/
 

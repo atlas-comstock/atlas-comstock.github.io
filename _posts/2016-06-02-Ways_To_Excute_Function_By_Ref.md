@@ -8,7 +8,7 @@ tags:
 - C++
 ---
 在C语言里, 如何通过输入函数名字来调用函数?
-[直接上代码](https://github.com/YongHaoWu/C_eval).
+[直接上代码](https://github.com/huoru/C_eval).
 
 大致有三种方法:
 
@@ -58,7 +58,7 @@ main: $(objs)
 
 以上方法都可以在[Stackoverflow上找到](http://stackoverflow.com/questions/11254891/can-a-running-c-program-access-its-own-symbol-table?rq=1)
 
-3. 直接到ELF里查符号表, [找出函数的名字与值](https://github.com/YongHaoWu/C_eval).
+3. 直接到ELF里查符号表, [找出函数的名字与值](https://github.com/huoru/C_eval).
 
 方法大致是, 读取编译后的程序(可执行文件也是ELF), 找到SHT_SYMTAB(符号表), 然后遍历符号表, 找到与函数名一样的符号. 
 

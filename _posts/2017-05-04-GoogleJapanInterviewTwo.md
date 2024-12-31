@@ -13,7 +13,7 @@ tags:
 面试官打来，寒暄了一两句，就说 should we start?
 
 我以为像上次一样，直接一道 leetcode hard 难度拍过来，没想到竟然问基础知识！
-http://yonghaowu.github.io//2016/10/25/GoogleJapanInterview/
+http://huoru.github.io//2016/10/25/GoogleJapanInterview/
 
 
 
